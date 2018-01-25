@@ -11,7 +11,6 @@ export default class Swiper extends React.Component{
   }
 
   componentWillMount(){
-    console.log("swiper-componentWillMount")
     fetch('http://elementmicro.aoyou.com/wap/ElementService/GetBannerList', {
       method: 'POST',
       headers: {
@@ -20,7 +19,6 @@ export default class Swiper extends React.Component{
       },
       body: JSON.stringify({"cityId":"1","channelTypeid":385,"type":2,"SpaceGuid":"52ECF4D4-4B57-47A4-BE91-EE6779619E5B"})
     }).then((response) =>{
-      console.log("swiper-fetchresult")
       let aaa = JSON.parse(response._bodyText).Data
       this.setState({
         value: JSON.parse(aaa)
@@ -53,9 +51,8 @@ export default class Swiper extends React.Component{
   }
 
   render(){
-    console.log("swiper-render")
     return (
-      <View>
+      <View style={styles.swiperView}>
         {/*<Button style={{height:30}} title="Press me" onPress={() => this.setState({value: 'X'})}></Button>*/}
         {this.content()}
       </View>
@@ -64,6 +61,9 @@ export default class Swiper extends React.Component{
 }
 
 const styles = StyleSheet.create({
+  swiperView:{
+    height: 180
+  },
   Viewbox:{
     height: 180,
     backgroundColor: '#DFDFDF',

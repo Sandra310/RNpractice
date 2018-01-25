@@ -1,6 +1,6 @@
 import React from 'react';
 // import App from './demo/index';
-import App from './containers/app'
+import App from './pages/app'
 
 const Root = () => (
   <App />

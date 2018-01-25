@@ -2,11 +2,9 @@ import React from 'react'
 import { View,ScrollView, Text,StyleSheet,Image } from 'react-native'
 import TabNavigator from 'react-native-tab-navigator'
 import { TabBar } from 'antd-mobile';
-import Swiper from '.././components/swiper'
-import Header from './header'
-import Section from './section'
-
-import Mdd from './mdd'
+import HomePage from './homepage'
+import webview from './webview'
+import Mdd from './mddpage'
 
 
 
@@ -26,11 +24,9 @@ export default class App extends React.Component{
   }
 
   homeView = ()=>{
-    let content = <ScrollView>
-      <Swiper></Swiper>
-      <Header ></Header>
-      <Section></Section>
-    </ScrollView>
+    let content = <View>
+      <HomePage></HomePage>
+    </View>
     return content
   }
 
@@ -61,7 +57,6 @@ export default class App extends React.Component{
   }
 
   render(){
-    console.log("app-render")
     var aaa = this.state.value
     //alert(Object.prototype.toString.call(aaa))
     return(
